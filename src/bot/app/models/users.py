@@ -11,5 +11,4 @@ class Users(Base):
     username = Column(String)
     is_admin = Column(Boolean, default=False)
 
-    password = Column(String)
     created_at = Column(DateTime, default=datetime.datetime.utcnow)

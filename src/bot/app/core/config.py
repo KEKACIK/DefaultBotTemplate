@@ -10,6 +10,10 @@ class Settings(BaseSettings):
     POSTGRES_PASSWORD: str
     POSTGRES_DB: str
 
+    REDIS_HOST: str
+    REDIS_PORT: int
+    REDIS_DB: int
+
     TELEGRAM_BOT_TOKEN: str
 
     SQLALCHEMY_DATABASE_URI: Optional[PostgresDsn] = None
