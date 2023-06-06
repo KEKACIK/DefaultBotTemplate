@@ -1,0 +1,17 @@
+messages:
+  start: |
+    Welcome to <b>{bot_name}</b>!
+  settings: |
+    You have entered ⚙️ Settings!
+  settings_language: |
+    Select the desired language to change the localization.
+  admin: |
+    You have entered the 💎 Admin Panel!
+buttons:
+  back: "🔙 Back"
+  start_settings: '⚙️ Settings'
+  settings_language: "🎭 Change language"
+  ru: "🇷🇺 Русский"
+  en: "🇺🇸 English"
+  start_admin: "💎 Admin panel"
+  admin_menu_export_users: "🔽 Export Users"

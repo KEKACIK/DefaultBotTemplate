@@ -5,5 +5,5 @@ class GoToCb(CallbackData, prefix="GoTo"):
     action: str
 
 
-class MainMenuCb(CallbackData, prefix="MainMenu"):
+class StartCb(CallbackData, prefix="Start"):
     action: str

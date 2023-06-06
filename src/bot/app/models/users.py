@@ -10,5 +10,6 @@ class Users(Base):
 
     username = Column(String)
     is_admin = Column(Boolean, default=False)
+    locale = Column(String, default="en")
 
     created_at = Column(DateTime, default=datetime.datetime.utcnow)

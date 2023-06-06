@@ -5,7 +5,7 @@ from aiogram.types import Message, CallbackQuery
 from aiogram.types import Update
 
 from app import repo
-from app.misc import dp
+from app.misc import dp, locale_manager
 
 
 async def update_user(update: Union[Message, CallbackQuery]):
@@ -24,5 +24,10 @@ async def update_user(update: Union[Message, CallbackQuery]):
 @dp.update.outer_middleware()
 async def BigBro(handler: Callable[[Update, Dict[str, Any]], Awaitable[Any]], event: Update,
                  data: Dict[str, Any]) -> Any:
-    await update_user(event.message or event.callback_query)
+    user = await update_user(event.message or event.callback_query)
+    if user.locale:
+        data["_"] = locale_manager.get_locale(user.locale).get
+    else:
+        data["_"] = locale_manager.get_locale("en").get
+
     return await handler(event, data)

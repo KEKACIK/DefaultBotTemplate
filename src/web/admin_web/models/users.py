@@ -8,8 +8,11 @@ class Users(models.Model):
         verbose_name_plural = 'Все Пользователи'
 
     id = models.BigIntegerField(primary_key=True)
+
     username = models.CharField(max_length=1000, verbose_name='Никнейм')
     is_admin = models.BooleanField(default=False, verbose_name="Админ")
+    locale = models.CharField(default="en", verbose_name="Язык")
+
     created_at = models.DateTimeField(default=False, verbose_name="Время создания")
 
     def __str__(self):

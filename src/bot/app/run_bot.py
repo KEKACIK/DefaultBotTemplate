@@ -1,15 +1,16 @@
 from loguru import logger
-import aiogram
-logger.info(aiogram.__version__)
+
 from app import misc
-from app.bot.handlers import menu_router
+from app.bot.handlers import start_router, admin_router, settings_router
 from db.init_db import init_db
 from utils.logger import configure_logger
 
 
 def setup():
-    import app.bot.middlewares.big_bro # noqa
-    misc.dp.include_router(menu_router)
+    import app.bot.middlewares.big_bro  # noqa
+    misc.dp.include_router(start_router)
+    misc.dp.include_router(admin_router)
+    misc.dp.include_router(settings_router)
 
 
 async def on_startup():
@@ -25,6 +26,11 @@ async def on_startup():
     logger.info("Success init")
 
 
+async def on_shutdown():
+    logger.info("Success exit")
+
+
 if __name__ == '__main__':
     misc.dp.startup.register(on_startup)
+    misc.dp.shutdown.register(on_shutdown)
     misc.dp.run_polling(misc.bot)
