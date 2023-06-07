@@ -19,12 +19,16 @@ messages:
     Review your message to send:
     
     {send_message}
+  admin_mailing_confirm: |
+    Mailing success:
+    {count_users}/{all_users} send.
 buttons:
   back: "🔙 Back"
-  start_settings: '⚙️ Settings'
-  settings_language: "🎭 Change language"
   ru: "🇷🇺 Russian"
   en: "🇺🇸 English"
+  start_settings: '⚙️ Settings'
+  settings_language: "🎭 Change language"
+  start_reminder: "⏰ Напоминания"
   start_admin: "💎 Admin panel"
   admin_export_users: "🔽 Export Users"
   admin_mailing: "📨 Do mailing"
