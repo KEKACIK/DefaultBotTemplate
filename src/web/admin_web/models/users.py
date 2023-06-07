@@ -10,6 +10,7 @@ class Users(models.Model):
     id = models.BigIntegerField(primary_key=True)
 
     username = models.CharField(max_length=1000, verbose_name='Никнейм')
+    fullname = models.CharField(max_length=1000, verbose_name='Имя')
     is_admin = models.BooleanField(default=False, verbose_name="Админ")
     locale = models.CharField(default="en", verbose_name="Язык")
 

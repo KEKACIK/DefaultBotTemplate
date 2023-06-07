@@ -1,16 +1,14 @@
 from loguru import logger
 
 from app import misc
-from app.bot.handlers import start_router, admin_router, settings_router
+from app.bot.handlers import admin_router, main_router
 from db.init_db import init_db
 from utils.logger import configure_logger
 
 
 def setup():
     import app.bot.middlewares.big_bro  # noqa
-    misc.dp.include_router(start_router)
-    misc.dp.include_router(admin_router)
-    misc.dp.include_router(settings_router)
+    misc.dp.include_router(main_router)
 
 
 async def on_startup():

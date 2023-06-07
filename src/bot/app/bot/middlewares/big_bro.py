@@ -14,10 +14,13 @@ async def update_user(update: Union[Message, CallbackQuery]):
     if user:
         if user.username != update.from_user.username:
             update_data["username"] = update.from_user.username
+        if user.fullname != update.from_user.full_name:
+            update_data["fullname"] = update.from_user.full_name
         if update_data:
             await repo.users.update(db_obj=user, **update_data)
     else:
-        user = await repo.users.create(id=update.from_user.id, username=update.from_user.username)
+        user = await repo.users.create(id=update.from_user.id,
+                                       username=update.from_user.username, fullname=update.from_user.full_name)
     return user
 
 

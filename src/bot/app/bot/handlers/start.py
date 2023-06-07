@@ -2,7 +2,6 @@ from aiogram import F, Router
 from aiogram.filters import Command
 from aiogram.fsm.context import FSMContext
 from aiogram.types import Message, CallbackQuery
-from loguru import logger
 
 from app import repo
 from app.bot.handlers.callbackdata.start import GoToCb
